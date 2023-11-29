@@ -15,6 +15,8 @@ const Coin = (props) =>
     const { char, pos } = props
     const { nodes, materials } = useGLTF("./assets/models/coin.glb")
 
+    console.log("boop")
+
     useFrame((_, delta) =>
     {
         // Item rotate
@@ -77,20 +79,19 @@ export default function Collectables(props)
     const coin6  = useRef()
     const coin7  = useRef()
 
-
     return(
     <>
-        <Coin position={ [ - 8.5, 4.5, 28 ] } pos={ [ - 8.5, 4.5, 28 ] } scale={ 2 } char={ char } coin={ coin1 } />
-        <Coin position={ [ 9.3, 4.5, 18 ] } pos={ [ 9.3, 4.5, 18 ] } scale={ 2 } char={ char } coin={ coin2 } />
-        <Coin position={ [ - 12, 7, 58 ] } pos={ [ - 12, 7, 58 ] } scale={ 2 } char={ char } coin={ coin3 } />
+        <Coin position={ [ 44, 9, - 13 ] } pos={ [ 44, 9, - 13 ] } scale={ 2 } char={ char } coin={ coin1 } />
+        <Coin position={ [ 63, 17, - 11 ] } pos={ [ 63, 17, - 11 ] } scale={ 2 } char={ char } coin={ coin2 } />
+        <Coin position={ [ 58, 30, 26 ] } pos={ [ 58, 30, 26 ] } scale={ 2 } char={ char } coin={ coin3 } />
         <Coin position={ [ - 52, 9, 51 ] } pos={ [ - 52, 9, 51 ] } scale={ 2 } char={ char } coin={ coin4 } />
-        {/* Stone platform */}
         <Coin position={ [ - 150, 14, 61 ] } pos={ [ - 150, 14, 61 ] } scale={ 2 } char={ char } coin={ coin5 } />
         <Coin position={ [ - 149, 5, 8 ] } pos={ [ - 149, 5, 8 ] } scale={ 2 } char={ char } coin={ coin7 } />
-        {/* Boat coin */}
         <Coin position={ [ 78, - 19, 5.1 ] } pos={ [ 78, - 18, 5.1 ] } scale={ 2.5 } char={ char } coin={ coin6 } />
     </>
     )
 }
+
+
 
 useGLTF.preload("./assets/models/coin.glb")

@@ -96,7 +96,6 @@ export default function App()
                         gravity={ [ 0, - 9.81, 0 ] }
                         >
                         <PerformanceMonitor
-                            // Detect low performance devices
                             onDecline={(fps) => 
                             {
                                 setDowngradedPerformance(true)

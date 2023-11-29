@@ -10,7 +10,7 @@ const Player = forwardRef((props, ref) =>
         if(ref.current)
         {
             const charPosition = ref.current.translation()
-            console.log(charPosition)
+            // console.log(charPosition)
             
             if(charPosition.y < - 30 )
             {
@@ -46,7 +46,7 @@ const Player = forwardRef((props, ref) =>
                 capsuleRadius={ 0.3 }
                 capsuleHalfHeight={ 0.5 }
                 friction={ 1 }
-                camInitDis={ - 10 } // Initial camera distance
+                camInitDis={ - 7 } // Initial camera distance
                 camMaxDis={ - 30 } // Maximum camera distance
                 camMinDis={ - 0.1 } // Minimum camera distancew
                 animated={ true }
