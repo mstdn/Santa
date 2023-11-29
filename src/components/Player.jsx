@@ -46,9 +46,9 @@ const Player = forwardRef((props, ref) =>
                 capsuleRadius={ 0.3 }
                 capsuleHalfHeight={ 0.5 }
                 friction={ 1 }
-                camInitDis={ - 7 } // Initial camera distance
-                camMaxDis={ - 30 } // Maximum camera distance
-                camMinDis={ - 0.1 } // Minimum camera distancew
+                camInitDis={ - 12 }
+                camMaxDis={ - 30 }
+                camMinDis={ - 0.1 }
                 animated={ true }
                 position={ [ 0, 20, 0 ] }
                 maxVelLimit={ 3 }
@@ -58,6 +58,7 @@ const Player = forwardRef((props, ref) =>
                 // jumpForceToGroundMult={ 10 }
                 gravityScale={ 1 }
                 autoBalanceDampingOnY={ 0.01 }
+                
                 // characterInitDir={ 160 }
                 // camInitDir={ Math.PI * 1 }
             >

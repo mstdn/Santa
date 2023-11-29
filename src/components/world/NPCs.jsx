@@ -46,9 +46,12 @@ export default function NPCs(props)
     const { char } = props
     const SnowPerson1 = useRef()
     const SnowPerson2 = useRef()
+    const SnowPerson3 = useRef()
+    const SnowPerson4 = useRef()
 
     return(
         <>
+            {/* Greeting things */}
             <Snowperson 
                 position={ [ - 1.7, - 3, 6.9 ] } 
                 pos={ [ - 1.7, - 3, 6.9 ] } 
@@ -65,6 +68,29 @@ export default function NPCs(props)
                 scale={ 1 }
                 rotation-y={ Math.PI * 1.2 }
                 snowman={ SnowPerson2 }
+                char={ char }
+            />
+
+
+            {/* Walking around */}
+            <Snowperson 
+                position={ [ - 8.9, - 4.6, - 27 ] } 
+                pos={ [ - 8.9, - 3, - 27 ] } 
+                anim={ "Cirlce" } 
+                scale={ 1 }
+                // rotation-y={ Math.PI * 1.2 }
+                snowman={ SnowPerson3 }
+                char={ char }
+            />
+
+            {/* On mountain */}
+            <Snowperson 
+                position={ [ 51, 21, - 37 ] } 
+                pos={ [ 51, 21, - 37 ] } 
+                anim={ "Cirlce" } 
+                scale={ 0.9 }
+                // rotation-y={ Math.PI * 1.2 }
+                snowman={ SnowPerson4 }
                 char={ char }
             />
         </>
