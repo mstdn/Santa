@@ -1,11 +1,15 @@
 import { useAnimations, useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
-import { useEffect, useMemo, useRef } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { Vector3 } from "three"
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js'
+import useSound from "use-sound"
 
 const Snowperson = (props) => 
 {
-    const { char, pos, anim, snowman } = props
+    const { char, pos, anim, snowman, sound } = props
+    const [ playSnowmanSound ] = useSound(sound, { volume: 1, interrupt: true })
+    const [ talk, setTalk ] = useState(false)
     const { animations } = useGLTF("./assets/models/snowperson.glb")
     const { actions } = useAnimations(animations, snowman)
     const model = useGLTF("./assets/models/snowperson.glb")
@@ -21,13 +25,25 @@ const Snowperson = (props) =>
         }
       })
     
-    // useFrame(() =>
-    // {
-    //     if(snowperson.current)
-    //     {
-    //         // console.log(snowperson.current)
-    //     }
-    // })
+      useFrame(() =>
+      {
+          if(char.current)
+          {
+              const position = new Vector3(pos[0], pos[1], pos[2])
+              const charPosition = char.current.translation()
+              const distance = position.distanceTo(new Vector3(charPosition.x, charPosition.y, charPosition.z))
+              
+              if(distance < 6 && !talk)
+              {
+                  playSnowmanSound()
+                  setTalk(true)
+              } 
+              else if(distance > 6 && talk)
+              {
+                  setTalk(false)
+              }
+          }
+      })
     
     useEffect(() =>
     {
@@ -60,6 +76,7 @@ export default function NPCs(props)
                 rotation-y={ Math.PI * 1 }
                 snowman={ SnowPerson1 }
                 char={ char }
+                sound={ './assets/audio/snow1.wav' }
             />
             <Snowperson 
                 position={ [ 5.2, - 3, 3.8 ] } 
@@ -81,6 +98,7 @@ export default function NPCs(props)
                 // rotation-y={ Math.PI * 1.2 }
                 snowman={ SnowPerson3 }
                 char={ char }
+                sound={ './assets/audio/snow2.wav' }
             />
 
             {/* On mountain */}
