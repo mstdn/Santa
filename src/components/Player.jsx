@@ -52,7 +52,7 @@ const Player = forwardRef((props, ref) =>
                 animated={ true }
                 position={ [ 0, 20, 0 ] }
                 maxVelLimit={ 3 }
-                sprintMult={ 2 }
+                sprintMult={ 3 }
                 jumpVel={ 8 }
                 // turnSpeed={ 10 }
                 // jumpForceToGroundMult={ 10 }
