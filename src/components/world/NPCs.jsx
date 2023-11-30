@@ -64,6 +64,7 @@ export default function NPCs(props)
     const SnowPerson2 = useRef()
     const SnowPerson3 = useRef()
     const SnowPerson4 = useRef()
+    const SnowPerson5 = useRef()
 
     return(
         <>
@@ -109,6 +110,18 @@ export default function NPCs(props)
                 scale={ 0.9 }
                 // rotation-y={ Math.PI * 1.2 }
                 snowman={ SnowPerson4 }
+                char={ char }
+            />
+
+            {/* In thr igloo */}
+            <Snowperson 
+                position={ [ 1.7, - 4, - 67 ] } 
+                pos={ [ 1.7, - 4, - 67 ] } 
+                anim={ "Idle" } 
+                scale={ 1.1 }
+                rotation-y={ - Math.PI * 0.2 }
+                rotation-z={ Math.PI * 0.03 }
+                snowman={ SnowPerson5 }
                 char={ char }
             />
         </>

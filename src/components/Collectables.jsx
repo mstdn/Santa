@@ -11,9 +11,8 @@ const Coin = (props) =>
     const { coin } = props
     const [ collected, setCollected ] = useState(false)
     const coins = useGame()
-    
     const { char, pos } = props
-    const { nodes, materials } = useGLTF("./assets/models/coin.glb")
+    const { nodes, materials } = useGLTF("./assets/models/cane.glb")
 
     useFrame((_, delta) =>
     {
@@ -42,18 +41,12 @@ const Coin = (props) =>
     return(
         <>
             <group ref={coin} {...props} dispose={null}>
-                <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                <group scale={ 0.02 }>
                     <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.Coin_1.geometry}
-                    material={materials.Yellow}
-                    />
-                    <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.Coin_2.geometry}
-                    material={materials.DarkYellow}
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Candy_Cane.geometry}
+                        material={materials.Mat}
                     />
                 </group>
             </group>
@@ -63,7 +56,7 @@ const Coin = (props) =>
 
 export function totalCoinAmount()
 {
-    return totalCoinAmount = 8
+    return totalCoinAmount = 9
 }
 
 export default function Collectables(props)
@@ -77,6 +70,7 @@ export default function Collectables(props)
     const coin6  = useRef()
     const coin7  = useRef()
     const coin8  = useRef()
+    const coin9  = useRef()
 
     return(
     <>
@@ -88,10 +82,12 @@ export default function Collectables(props)
         <Coin position={ [ - 61, 2, 21 ] } pos={ [ - 61, 2, 21 ] } scale={ 2 } char={ char } coin={ coin7 } />
         <Coin position={ [ - 46, - 6, - 77 ] } pos={ [ - 46, - 6, - 77 ] } scale={ 2.5 } char={ char } coin={ coin6 } />
         <Coin position={ [ 53, 21, - 37 ] } pos={ [ 53, 21, - 37 ] } scale={ 2 } char={ char } coin={ coin8 } />
+        {/* Igloo coin */}
+        <Coin position={ [ - 3, - 4.8, - 68.5 ] } pos={ [ - 3, - 4.8, - 68.5 ] } scale={ 2 } char={ char } coin={ coin9 } />
     </>
     )
 }
 
 
 
-useGLTF.preload("./assets/models/coin.glb")
+useGLTF.preload("./assets/models/cane.glb")

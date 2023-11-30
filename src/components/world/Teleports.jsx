@@ -57,14 +57,14 @@ export default function Teleports(props)
     return(
         <>
             <Teleport 
-                position={ [ - 3, 5, 66 ] } 
-                from={ [ - 3, 5, 66 ] } 
-                target={ { x: - 43, y: 15, z: 70 } } 
+                position={ [ - 62, 9.3, - 67 ] } 
+                from={ [ - 62, 9.3, - 67 ] } 
+                target={ { x: - 509, y: 15, z: - 216 } } 
                 scale={ 1 } 
                 char={ char } 
             />
 
-            <Teleport 
+            {/* <Teleport 
                 position={ [ - 75, 7.5, 51 ] } 
                 from={ [ - 75, 7.5, 51 ] } 
                 target={ { x: - 122, y: 25, z: 46 } } 
@@ -78,7 +78,7 @@ export default function Teleports(props)
                 target={ { x: - 141, y: 15, z: 63 } } 
                 scale={ 1 } 
                 char={ char } 
-            />
+            /> */}
         </>
     )
 }

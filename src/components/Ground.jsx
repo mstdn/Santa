@@ -12,12 +12,12 @@ export function Ground(props)
     <>
       <group>
         <mesh receiveShadow position={ [ 0, - 20, 0 ] } rotation-x={ - Math.PI / 2 }>
-          <planeGeometry args={ [ 1000, 1000 ] } />
-          <meshStandardMaterial map={ water } map-repeat={ [ 64, 64 ] } transparent opacity={ 0.8 } color="#add9ff" />
+          <planeGeometry args={ [ 2000, 2000 ] } />
+          <meshStandardMaterial map={ water } map-repeat={ [ 128, 128 ] } transparent opacity={ 0.8 } color="#add9ff" />
         </mesh>
         <mesh receiveShadow position={ [ 0, - 31, 0 ] } rotation-x={ - Math.PI / 2 }>
-          <planeGeometry args={ [ 1000, 1000 ] } />
-          <meshStandardMaterial map={ sand } map-repeat={ [ 64, 64 ] } color="#ffffff" />
+          <planeGeometry args={ [ 2000, 2000 ] } />
+          <meshStandardMaterial map={ sand } map-repeat={ [ 128, 128 ] } color="#ffffff" />
         </mesh>
       </group>
     </>
