@@ -20,8 +20,8 @@ export default function App()
     const cylinderGeometry = useMemo(() => new CylinderGeometry(2.3, 2.1, 0.3, 32, 1), [])
     const sphereGeometry = useMemo(() => new SphereGeometry(1.4, 32, 8), [])
     const boxGeometry = useMemo(() => new BoxGeometry(1, 1, 1), [])
-    const activeMaterial = useMemo(() => new MeshBasicMaterial({ color: 0xffffff, wireframe: false }), [])
-    const passiveMaterial = useMemo(() => new MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.4 }), [])
+    const activeMaterial = useMemo(() => new MeshBasicMaterial({ color: '#ED240C', wireframe: false }), [])
+    const passiveMaterial = useMemo(() => new MeshBasicMaterial({ color: '#ED240C', transparent: true, opacity: 0.4 }), [])
 
     // const [ paused, setPaused ] = useState(false)
     // useEffect(() => 

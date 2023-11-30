@@ -46,7 +46,7 @@ const Player = forwardRef((props, ref) =>
                 capsuleRadius={ 0.3 }
                 capsuleHalfHeight={ 0.5 }
                 friction={ 1 }
-                camInitDis={ - 10 }
+                camInitDis={ - 12 }
                 camMaxDis={ - 30 }
                 camMinDis={ - 0.1 }
                 animated={ true }

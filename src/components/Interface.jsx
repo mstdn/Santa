@@ -17,8 +17,8 @@ export default function Interface()
     return <>
         <div className="mobileInterface">
             <div className='flex justify-end pr-2 pt-2 '>
-                <div className='flex bg-black bg-opacity-40 rounded-lg p-2 border border-black'>
-                    <div className='text-md text-white'>
+                <div className='flex bg-white bg-opacity-50 rounded-lg p-2 border border-[#D6001C]'>
+                    <div className='text-md text-[#D6001C]'>
                         { coins } / { totalCoins }
                     </div>
                     <div className='pl-2'>
