@@ -376,6 +376,12 @@ export default function Trees()
                 scale={ 0.8 } 
                 rotation={ [ - Math.PI * 0.04, Math.PI * 2.2, Math.PI * 0.03 ] } 
             />
+
+            <PineTrees 
+                position={ [ - 466, - 10.5, - 195 ] } 
+                scale={ 0.8 } 
+                rotation={ [ - Math.PI * 0.04, Math.PI * 2.35, - Math.PI * 0.01 ] } 
+            />
             
             
             <ChristmasTree position={ [ 15, 1, - 16 ] } scale={ 8 } rotation={ [ 0, Math.PI * 0.5, 0 ] } />

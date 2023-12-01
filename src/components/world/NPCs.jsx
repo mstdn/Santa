@@ -7,7 +7,7 @@ import useSound from "use-sound"
 
 const Snowperson = (props) => 
 {
-    const { char, pos, anim, snowman, sound } = props
+    const { char, pos, anim, snowman, sound, hasAudio, repeat } = props
     const [ playSnowmanSound ] = useSound(sound, { volume: 1, interrupt: true })
     const [ talk, setTalk ] = useState(false)
     const { animations } = useGLTF("./assets/models/snowperson.glb")
@@ -33,12 +33,12 @@ const Snowperson = (props) =>
               const charPosition = char.current.translation()
               const distance = position.distanceTo(new Vector3(charPosition.x, charPosition.y, charPosition.z))
               
-              if(distance < 6 && !talk)
+              if(distance < 6 && !talk && hasAudio)
               {
                   playSnowmanSound()
                   setTalk(true)
               } 
-              else if(distance > 6 && talk)
+              else if(distance > 6 && talk && hasAudio && repeat)
               {
                   setTalk(false)
               }
@@ -78,6 +78,8 @@ export default function NPCs(props)
                 snowman={ SnowPerson1 }
                 char={ char }
                 sound={ './assets/audio/snow1.wav' }
+                hasAudio={ true }
+                repeat={ false }
             />
             <Snowperson 
                 position={ [ 5.2, - 3, 3.8 ] } 
@@ -87,6 +89,7 @@ export default function NPCs(props)
                 rotation-y={ Math.PI * 1.2 }
                 snowman={ SnowPerson2 }
                 char={ char }
+                hasAudio={ false }
             />
 
 
@@ -100,6 +103,8 @@ export default function NPCs(props)
                 snowman={ SnowPerson3 }
                 char={ char }
                 sound={ './assets/audio/snow2.wav' }
+                hasAudio={ true }
+                repeat={ true }
             />
 
             {/* On mountain */}
@@ -111,6 +116,7 @@ export default function NPCs(props)
                 // rotation-y={ Math.PI * 1.2 }
                 snowman={ SnowPerson4 }
                 char={ char }
+                hasAudio={ false }
             />
 
             {/* In thr igloo */}
@@ -123,6 +129,7 @@ export default function NPCs(props)
                 rotation-z={ Math.PI * 0.03 }
                 snowman={ SnowPerson5 }
                 char={ char }
+                hasAudio={ false }
             />
         </>
     )

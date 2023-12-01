@@ -23,18 +23,18 @@ export default function App()
     const activeMaterial = useMemo(() => new MeshBasicMaterial({ color: '#ED240C', wireframe: false }), [])
     const passiveMaterial = useMemo(() => new MeshBasicMaterial({ color: '#ED240C', transparent: true, opacity: 0.4 }), [])
 
-    // const [ paused, setPaused ] = useState(false)
-    // useEffect(() => 
-    // {
-    //     document.addEventListener("visibilitychange", () => 
-    //     {      
-    //         setPaused(true)
-    //     })
-    //     return() =>
-    //     {
-    //         document.removeEventListener("visibilitychange", () => {} )
-    //     }
-    // }, [])
+    const [ paused, setPaused ] = useState(false)
+    useEffect(() => 
+    {
+        document.addEventListener("visibilitychange", () => 
+        {      
+            setPaused(true)
+        })
+        return() =>
+        {
+            document.removeEventListener("visibilitychange", () => {} )
+        }
+    }, [])
 
     const keyboardMap = 
     [
@@ -85,14 +85,14 @@ export default function App()
                 shadows
                 camera={ { far: 1000, near: 0.1 } }
                 dpr={ [ 1, 1.5 ] }
-                // onClick={() => setPaused(false)}
+                onClick={() => setPaused(false)}
                 // style={{ background: 'black' }}
             >
                     <fog attach="fog" args={["#87CEEB", 10, 600]} />
                     <Physics
                         // debug
                         timeStep="vary"
-                        // paused={ paused }
+                        paused={ paused }
                         gravity={ [ 0, - 9.81, 0 ] }
                         >
                         <PerformanceMonitor

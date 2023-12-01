@@ -6,6 +6,7 @@ import NPCs from "./world/NPCs"
 import Structures from "./world/Structures"
 import Trees from "./world/Trees"
 import Teleports from "./world/Teleports"
+import Texts from "./world/Texts"
 
 export default function World(props)
 {
@@ -20,7 +21,7 @@ export default function World(props)
             <Trees />
             <Teleports char={ char } />
             <Structures char={ char } />
-            {/* <Texts /> */}
+            <Texts char={ char } />
             <Ground />
             <Environment />
         </group>
